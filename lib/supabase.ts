@@ -1,11 +1,9 @@
 import { createClient } from "@supabase/supabase-js"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
-const supabaseUrl = "https://qetjvxqiygghrhochoke.supabase.co"
-const supabaseAnonKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFldGp2eHFpeWdnaHJob2Nob2tlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIxNTk1NjYsImV4cCI6MjA1NzczNTU2Nn0.tMYBTbZMfDbNalVJYzkE3N8IIKF1-z9vrgcHV4KZt9c"
-const supabaseServiceKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFldGp2eHFpeWdnaHJob2Nob2tlIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MjE1OTU2NiwiZXhwIjoyMDU3NzM1NTY2fQ.25JkL-IChWZ5by4TUMEBjKy_m-YN22NgBVhw70vTeIw"
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
 
 // Create a Supabase client with the anon key
 export const supabase =
